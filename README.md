@@ -9,6 +9,11 @@ docker exec -it guests-back-laravel.test-1 sh -c "php artisan migrate"
 docker exec -it guests-back-laravel.test-1 sh -c "php artisan scribe:generate"
 ```
 
+#### Исправить стиль кода
+```sh
+docker exec -it guests-back-laravel.test-1 sh -c "php ./vendor/bin/php-cs-fixer fix"
+```
+
 #### Тестирование
 ```sh
 ./vendor/bin/sail test

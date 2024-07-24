@@ -16,7 +16,7 @@ use Tests\TestCase;
  * @see GuestService
  */
 #[Group('GuestService')]
-final class StmtServiceTest  extends TestCase
+final class StmtServiceTest extends TestCase
 {
     use RefreshDatabase;
     use CodeCountryFaker;
