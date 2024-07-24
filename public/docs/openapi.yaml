@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: guests
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/guests:
+    post:
+      summary: 'Создать гостя.'
+      operationId: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: ''
+                  example: nemo
+                last_name:
+                  type: string
+                  description: ''
+                  example: culpa
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: fhudson@example.com
+                phone:
+                  type: string
+                  description: 'Must be at least 11 characters.'
+                  example: kdpqfsbjwpmotfdaexlxyunocdqncjkpwlpqgrdxqqszkg
+                country:
+                  type: string
+                  description: ''
+                  example: quaerat
+              required:
+                - first_name
+                - last_name
+                - phone
+      security: []
+  '/api/guests/{id}':
+    get:
+      summary: 'Получить данные гостя.'
+      operationId: ''
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  first_name: ipsum
+                  last_name: laborum
+                  email: smith.cheyanne@example.com
+                  phone: kjrkrnrxhqjzmjlhuktenyplpuiuyijybarnuijloi
+                  country: nobis
+                  created_at: '2024-07-24T08:08:00.000000Z'
+                  updated_at: '2024-07-24T08:08:00.000000Z'
+                  deleted_at: null
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  first_name:
+                    type: string
+                    example: ipsum
+                  last_name:
+                    type: string
+                    example: laborum
+                  email:
+                    type: string
+                    example: smith.cheyanne@example.com
+                  phone:
+                    type: string
+                    example: kjrkrnrxhqjzmjlhuktenyplpuiuyijybarnuijloi
+                  country:
+                    type: string
+                    example: nobis
+                  created_at:
+                    type: string
+                    example: '2024-07-24T08:08:00.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2024-07-24T08:08:00.000000Z'
+                  deleted_at:
+                    type: string
+                    example: null
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Обновить данные гостя.'
+      operationId: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: ''
+                  example: quia
+                last_name:
+                  type: string
+                  description: ''
+                  example: omnis
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: marilou97@example.com
+                phone:
+                  type: string
+                  description: 'Must be at least 11 characters.'
+                  example: hllppbtarnxgrwidapkubmitxymkcwufusndbcsybwvbavgqpcimffkhcrkmtbxlxkmflfoaibrgthcayv
+                country:
+                  type: string
+                  description: ''
+                  example: ab
+              required:
+                - first_name
+                - last_name
+                - phone
+      security: []
+    delete:
+      summary: 'Удалить гостя.'
+      operationId: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the guest.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
